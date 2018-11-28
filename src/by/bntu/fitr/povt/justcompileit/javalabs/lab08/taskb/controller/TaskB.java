@@ -7,9 +7,10 @@ import by.bntu.fitr.povt.justcompileit.javalabs.lab08.taska.view.Printer;
 public class TaskB {
 
     public static void main(String[] args) {
-        long number = UserInput.inputInt("Input integer number: ");
+        int number = UserInput.inputInt("Input natural number: ");
+        int mul = UserInput.inputInt("Input multiplicity: ");
 
-        String answer = Verifier.check(number);
+        String answer = Verifier.check(number, mul);
 
         Printer.print(answer);
     }

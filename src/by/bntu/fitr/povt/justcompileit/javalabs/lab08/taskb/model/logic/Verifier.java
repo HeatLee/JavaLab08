@@ -4,9 +4,9 @@ public class Verifier {
 
     public static final int DEFAULT_VALUE = 0;
     public static final int BASE = 10;
-    public static final int MULTIPLICITY = 2;
+    //public static final int MULTIPLICITY = 2;
 
-    public static String check(long number) {
+    public static String check(int number, int mul) {
         String answer = "Incorrect data.";
 
         if (number > DEFAULT_VALUE) {
@@ -15,7 +15,7 @@ public class Verifier {
             int numLen = DEFAULT_VALUE;
             while (number > DEFAULT_VALUE) {
                 dig = number % BASE;
-                if (dig % MULTIPLICITY == DEFAULT_VALUE) {
+                if (dig % mul == DEFAULT_VALUE) {
                     counter ++;
                 }
                 numLen ++;
@@ -23,9 +23,9 @@ public class Verifier {
             }
 
             if (numLen == counter || counter == DEFAULT_VALUE) {
-                answer = "All digits has identical multiplicity.";
+                answer = String.format("All digits in a number are divided by %d", mul);
             } else {
-                answer = "All digits hasn't identical multiplicity.";
+                answer = String.format("All digits in a number aren't divided by %d", mul);
             }
         }
 
